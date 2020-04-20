@@ -6,6 +6,8 @@ on:
   delete:
     branches-ignore:
       - 'master'
+    tags-ignore:
+      - '*'
   
 
 jobs:
@@ -15,5 +17,5 @@ jobs:
     steps:
       - name: download ossutil
         run: wget https://gosspublic.alicdn.com/ossutil/1.4.2/ossutil64
-      - name: remove files
+      - name: remove ${{ github.event.ref }} files
         run: echo ${{ github.event.ref }}
