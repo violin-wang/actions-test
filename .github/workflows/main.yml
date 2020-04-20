@@ -4,10 +4,8 @@ name: Remove aliyun oss files after delete
 
 on:
   delete:
-    branches-ignore:
-      - 'master'
-    tags:
-      - 'not-exists'
+    tags-ignore:
+      - '**'
   
 
 jobs:
