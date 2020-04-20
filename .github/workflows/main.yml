@@ -14,6 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download ossutil
-        run: https://gosspublic.alicdn.com/ossutil/1.4.2/ossutil64
+        run: wget https://gosspublic.alicdn.com/ossutil/1.4.2/ossutil64
       - name: remove files
         run: echo ${{ github.event.ref }}
