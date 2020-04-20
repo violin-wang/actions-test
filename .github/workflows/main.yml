@@ -3,15 +3,12 @@
 name: Remove aliyun oss files after delete
 
 on:
-  delete:
-    tags-ignore:
-      - '**'
-  
+  delete  
 
 jobs:
-
   remove_files:
     runs-on: ubuntu-latest
+    if: github.event.ref_type == 'branch'
     steps:
       - name: download ossutil
         run: wget https://gosspublic.alicdn.com/ossutil/1.4.2/ossutil64
