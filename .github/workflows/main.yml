@@ -16,4 +16,4 @@ jobs:
       - name: setup ossutil environment variables
         run: ./ossutil64 config -e "${{ secrets.OssEndPoint }}" -i "${{ secrets.OssAppKeyId }}" -k "${{ secrets.OssAppKeySecret }}"
       - name: remove ${{ github.event.ref }} files
-        run: ossutil rm oss://${{ secrets.OssBucket }}/${{ github.event.ref }} --recursive --force --all-type
+        run: ./ossutil64 rm oss://${{ secrets.OssBucket }}/${{ github.event.ref }} --recursive --force --all-type
